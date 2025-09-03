@@ -8,6 +8,7 @@ import BadgeCatalog from "@/pages/badge-catalog";
 import Evidence from "@/pages/evidence";
 import Progress from "@/pages/progress";
 import Profile from "@/pages/profile";
+import BadgeBuilder from "@/pages/badge-builder";
 import NotFound from "@/pages/not-found";
 import Sidebar from "@/components/layout/sidebar";
 
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/evidence" component={Evidence} />
           <Route path="/progress" component={Progress} />
           <Route path="/profile" component={Profile} />
+          <Route path="/badge-builder" component={BadgeBuilder} />
           <Route component={NotFound} />
         </Switch>
       </main>

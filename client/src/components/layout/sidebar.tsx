@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 const navigation = [
   { name: "Dashboard", href: "/", icon: "fas fa-tachometer-alt" },
   { name: "Badge Catalog", href: "/badges", icon: "fas fa-medal" },
+  { name: "Badge Builder", href: "/badge-builder", icon: "fas fa-magic" },
   { name: "My Evidence", href: "/evidence", icon: "fas fa-folder-open" },
   { name: "Progress", href: "/progress", icon: "fas fa-chart-line" },
   { name: "Profile", href: "/profile", icon: "fas fa-user" },

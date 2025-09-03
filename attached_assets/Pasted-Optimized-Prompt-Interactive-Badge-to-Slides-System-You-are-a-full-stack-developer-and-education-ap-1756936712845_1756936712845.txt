@@ -1,0 +1,49 @@
+Optimized Prompt: Interactive Badge-to-Slides System
+You are a full-stack developer and education app designer. Build an interactive web app that lets OJC students submit evidence and automatically generates a badge presentation.
+System Flow
+Landing Page
+Title: “OJC Badge Builder”
+Short description: “Upload your evidence, choose a badge, and we’ll help you create a presentation.”
+Button: Start My Badge
+Badge Selection
+Dropdown or clickable cards with all badge categories and badges:
+Excellence (1–3)
+Innovation (1–4)
+Integrity (1–3)
+Inspiration (1–3)
+Hauora (1–3)
+Relationships (1–4)
+Evidence Upload
+Options:
+Upload file (PDF, image, video link).
+Type short description (e.g., “My science fair project on renewable energy”).
+Student can upload up to 6 items.
+Reflection Input
+Prompted questions appear based on the badge criteria (from the OJC docs).
+Student answers short reflections (text box).
+Slide Generation
+System automatically creates a slide deck (PowerPoint/Google Slides/HTML slides) with:
+Slide 1: Badge name, category, icon, and short description.
+Slide 2–X: Each piece of evidence → image/filename + student’s reflection text.
+Final Slide: Conclusion → what they learned, how it shows growth, and how it fits OJC’s Graduate Profile.
+Export / Download
+Options to:
+Download slides as PPTX or PDF.
+Save draft for later.
+Share link with teachers.
+Technical Requirements
+Frontend: React + Tailwind (clean card-based layout).
+Backend: Node.js or Python (handle uploads + generate slides).
+Slide Generation: Use a library like reveal.js (for web slides) or PptxGenJS (for downloadable PowerPoint).
+Storage: Local upload OR cloud integration (Google Drive / OneDrive).
+Responsive: Must work on mobile and desktop.
+Design Guidelines
+Student-friendly, colorful interface (use OJC badge colors).
+Badge icons for quick recognition.
+Casual, Gen Z tone (e.g., “Drop your evidence here ✨”).
+Keep the reflection prompts short and easy to answer.
+Slides should be clean, simple, and consistent (title + image + text per slide).
+Output Expected
+Provide the full source code (React + Tailwind + backend).
+Include sample slide export.
+Show example flow using one badge (e.g., Innovation 2 with 3 evidence items).

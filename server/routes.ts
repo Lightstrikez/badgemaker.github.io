@@ -247,6 +247,66 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Slide generation routes
+  app.post("/api/slides/generate", async (req, res) => {
+    try {
+      const { badgeId, badgeName, graduateProfile, evidence, reflections } = req.body;
+      
+      // Get badge details
+      const badge = await storage.getBadge(badgeId);
+      if (!badge) {
+        return res.status(404).json({ message: "Badge not found" });
+      }
+
+      // Generate slide content
+      const slideData = {
+        badgeId,
+        badgeName,
+        graduateProfile,
+        badge,
+        evidence,
+        reflections,
+        generatedAt: new Date().toISOString(),
+        downloadUrl: `/api/slides/download/${badgeId}`,
+        viewUrl: `/api/slides/view/${badgeId}`,
+        shareUrl: `/api/slides/share/${badgeId}`
+      };
+
+      // In a real implementation, you would use PptxGenJS here
+      // For now, we'll return the slide data structure
+      res.json(slideData);
+    } catch (error) {
+      res.status(500).json({ message: "Error generating slides" });
+    }
+  });
+
+  app.get("/api/slides/download/:badgeId", async (req, res) => {
+    try {
+      // In a real implementation, this would generate and serve the PPTX file
+      res.json({ message: "Download functionality would be implemented here", badgeId: req.params.badgeId });
+    } catch (error) {
+      res.status(500).json({ message: "Error downloading slides" });
+    }
+  });
+
+  app.get("/api/slides/view/:badgeId", async (req, res) => {
+    try {
+      // In a real implementation, this would serve an HTML presentation
+      res.json({ message: "View functionality would be implemented here", badgeId: req.params.badgeId });
+    } catch (error) {
+      res.status(500).json({ message: "Error viewing slides" });
+    }
+  });
+
+  app.get("/api/slides/share/:badgeId", async (req, res) => {
+    try {
+      // In a real implementation, this would provide sharing functionality
+      res.json({ message: "Share functionality would be implemented here", badgeId: req.params.badgeId });
+    } catch (error) {
+      res.status(500).json({ message: "Error sharing slides" });
+    }
+  });
+
   // Serve uploaded files
   app.use('/uploads', express.static(uploadDir));
 
