@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(210, 40%, 98%);
+  --foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --primary: hsl(221.2, 83.2%, 53.3%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(45.4, 93.4%, 47.5%);
+  --secondary-foreground: hsl(222.2, 84%, 4.9%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --success: hsl(142.1, 76.2%, 36.3%);
+  --success-foreground: hsl(355.7, 100%, 97.3%);
+  --warning: hsl(32.6, 94.6%, 43.7%);
+  --warning-foreground: hsl(355.7, 100%, 97.3%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --ring: hsl(221.2, 83.2%, 53.3%);
+  --radius: 0.5rem;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  /* Badge colors */
+  --excellence-color: hsl(45.4, 93.4%, 47.5%);
+  --innovation-color: hsl(197, 71%, 73%);
+  --integrity-color: hsl(142.1, 76.2%, 36.3%);
+  --inspiration-color: hsl(280, 91%, 51%);
+  --hauora-color: hsl(25, 95%, 53%);
+  --relationships-color: hsl(346, 87%, 43%);
+}
+
+.dark {
+  --background: hsl(222.2, 84%, 4.9%);
+  --foreground: hsl(210, 40%, 98%);
+  --card: hsl(222.2, 84%, 4.9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --primary: hsl(217.2, 91.2%, 59.8%);
+  --primary-foreground: hsl(222.2, 84%, 4.9%);
+  --secondary: hsl(217.2, 32.6%, 17.5%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217.2, 32.6%, 17.5%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --accent: hsl(217.2, 32.6%, 17.5%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217.2, 32.6%, 17.5%);
+  --input: hsl(217.2, 32.6%, 17.5%);
+  --ring: hsl(224.3, 76.3%, 94.1%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .graduate-profile-excellence {
+    @apply bg-yellow-500 text-yellow-50;
+  }
+  
+  .graduate-profile-innovation {
+    @apply bg-cyan-500 text-cyan-50;
+  }
+  
+  .graduate-profile-integrity {
+    @apply bg-green-600 text-green-50;
+  }
+  
+  .graduate-profile-inspiration {
+    @apply bg-purple-600 text-purple-50;
+  }
+  
+  .graduate-profile-hauora {
+    @apply bg-orange-500 text-orange-50;
+  }
+  
+  .graduate-profile-relationships {
+    @apply bg-rose-600 text-rose-50;
+  }
+}
