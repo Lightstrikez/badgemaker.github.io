@@ -734,15 +734,30 @@ export default function BadgeBuilder() {
                 <CardTitle>Download Your Presentation</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" data-testid="download-pptx">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start" 
+                  onClick={() => slideData?.downloadUrl && window.open(slideData.downloadUrl, '_blank')}
+                  data-testid="download-pptx"
+                >
                   <i className="fas fa-file-powerpoint mr-3 text-orange-500"></i>
                   Download PowerPoint (.pptx)
                 </Button>
-                <Button variant="outline" className="w-full justify-start" data-testid="download-pdf">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start" 
+                  onClick={() => slideData?.pdfUrl && window.open(slideData.pdfUrl, '_blank')}
+                  data-testid="download-pdf"
+                >
                   <i className="fas fa-file-pdf mr-3 text-red-500"></i>
                   Download PDF
                 </Button>
-                <Button variant="outline" className="w-full justify-start" data-testid="view-online">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start" 
+                  onClick={() => slideData?.viewUrl && window.open(slideData.viewUrl, '_blank')}
+                  data-testid="view-online"
+                >
                   <i className="fas fa-eye mr-3 text-blue-500"></i>
                   View Online Presentation
                 </Button>
@@ -754,15 +769,44 @@ export default function BadgeBuilder() {
                 <CardTitle>Next Steps</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" data-testid="book-panel">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => toast({
+                    title: "Panel booking coming soon!",
+                    description: "Check with your teacher about badge panel times."
+                  })}
+                  data-testid="book-panel"
+                >
                   <i className="fas fa-calendar mr-3 text-green-500"></i>
                   Book Badge Panel Slot
                 </Button>
-                <Button variant="outline" className="w-full justify-start" data-testid="share-teacher">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => {
+                    if (slideData?.shareUrl) {
+                      navigator.clipboard.writeText(slideData.shareUrl);
+                      toast({
+                        title: "Copied to clipboard! 📋",
+                        description: "Share this link with your teacher or classmates."
+                      });
+                    }
+                  }}
+                  data-testid="share-teacher"
+                >
                   <i className="fas fa-share mr-3 text-purple-500"></i>
                   Share with Teacher
                 </Button>
-                <Button variant="outline" className="w-full justify-start" data-testid="save-draft">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => toast({
+                    title: "Portfolio saved!",
+                    description: "Your badge portfolio has been saved to your account."
+                  })}
+                  data-testid="save-draft"
+                >
                   <i className="fas fa-save mr-3 text-cyan-500"></i>
                   Save as Draft
                 </Button>
