@@ -1,0 +1,54 @@
+Optimized Prompt: Website About OJC Badges
+You are a web designer and content creator. Build a student-friendly website that explains the OJC Graduate Profile Badges using information from:
+Badge Bidding at OJC 
+OJC Graduate Profile Badges (descriptions and criteria) 
+The goal: create a clear, engaging, and visually appealing site where students can easily understand what badges are, why they matter, and how to earn them.
+Website Requirements
+1. Structure / Pages:
+Home Page
+Title: “OJC Graduate Profile Badges”
+Hero section: What badges are, why OJC uses them, short inspiring message.
+Quick links to badge categories (Excellence, Innovation, Integrity, Inspiration, Hauora, Relationships).
+Button to “How to Apply for a Badge.”
+Badge Categories Pages
+One page per category (Excellence, Innovation, Integrity, Inspiration, Hauora, Relationships).
+Each page lists the badges (e.g., Excellence 1, 2, 3) with:
+Badge name + short description (from docs).
+Criteria explained in simple student language.
+Junior vs Senior expectations.
+An icon or symbol for each badge (e.g., star for Excellence, lightbulb for Innovation).
+How to Apply Page
+Step-by-step guide: choosing a badge, gathering evidence, writing reflections, preparing pitch.
+Include checklist and FAQ.
+Black Badge (Exemplary) Page
+Special highlight of what makes a badge “Exemplary” or “Black Badge.”
+Tips for aiming high.
+Student voice quotes or reflection examples.
+Resources Page
+Downloadable PDF guides (Badge Bidding doc, Graduate Profile).
+Reflection prompts students can copy.
+Practice pitch questions.
+2. Visual Design:
+Style: Clean, modern, colorful but not overwhelming.
+Color coding by badge category:
+Excellence = gold
+Innovation = teal/blue
+Integrity = green
+Inspiration = purple
+Hauora = orange
+Relationships = pink/red
+Icons or simple illustrations for each category.
+Responsive layout (works on desktop, tablet, mobile).
+3. Content Details:
+Use student-friendly, casual language (Gen Z tone).
+Pull badge descriptors and exemplar criteria directly from the official docs.
+Always show Junior vs Senior criteria clearly.
+For each badge, add sample evidence ideas (projects, reflections, outside school activities).
+For Black Badge, explain what “Exemplary” looks like and how to reach it.
+4. Extra Features:
+Search bar to find badges by keyword.
+Interactive checklist (students can tick off steps when preparing a pitch).
+Call-to-action buttons like “Start Your Badge Journey” or “Build Your Pitch.”
+(Optional) Embed short testimonial quotes from students about their badge experience.
+Output Format
+Deliver the website as HTML + CSS (with Tailwind). Use a clean grid layout with cards for badges. Include placeholders for images/icons. All text content should come from the OJC badge docs (summarized in student-friendly wording).
