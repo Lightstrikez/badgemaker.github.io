@@ -65,6 +65,159 @@ const EVIDENCE_SOURCES = [
   { value: 'Outside OJC', label: 'Experience outside of OJC' }
 ] as const;
 
+// Badge-specific tips for achieving excellence
+const getBadgeTips = (badgeName: string) => {
+  const tips: Record<string, JSX.Element[]> = {
+    // Excellence badges
+    'Excellence 1 Junior': [
+      <div key="1">• <strong>Show genuine curiosity:</strong> Ask follow-up questions, explore topics beyond requirements</div>,
+      <div key="2">• <strong>Document your learning journey:</strong> Include before/after comparisons of your understanding</div>,
+      <div key="3">• <strong>Demonstrate resilience:</strong> Show specific examples of overcoming learning challenges</div>
+    ],
+    'Excellence 1 Senior': [
+      <div key="1">• <strong>Make deep connections:</strong> Link new learning to multiple previous experiences and contexts</div>,
+      <div key="2">• <strong>Show strategic thinking:</strong> Explain how you planned and adapted your learning strategies</div>,
+      <div key="3">• <strong>Lead by example:</strong> Show how your curiosity and resilience inspired others</div>
+    ],
+    
+    // Innovation badges  
+    'Innovation 1 Junior': [
+      <div key="1">• <strong>Think outside the box:</strong> Show unique approaches that others hadn't considered</div>,
+      <div key="2">• <strong>Experiment fearlessly:</strong> Include examples of creative risks that paid off</div>,
+      <div key="3">• <strong>Learn from failures:</strong> Show how mistakes led to better creative solutions</div>
+    ],
+    'Innovation 1 Senior': [
+      <div key="1">• <strong>Systematic creativity:</strong> Show how you deliberately use different creative techniques</div>,
+      <div key="2">• <strong>Cross-domain innovation:</strong> Apply ideas from one area to solve problems in another</div>,
+      <div key="3">• <strong>Measure impact:</strong> Demonstrate how your creative approaches improved outcomes</div>
+    ],
+
+    // Hauora badges
+    'Hauora 1 Junior': [
+      <div key="1">• <strong>Show authentic engagement:</strong> Go beyond participation - show genuine enthusiasm</div>,
+      <div key="2">• <strong>Measurable fitness gains:</strong> Include specific improvements with dates and evidence</div>,
+      <div key="3">• <strong>Safety leadership:</strong> Show how you helped others stay safe, not just yourself</div>
+    ],
+    'Hauora 1 Senior': [
+      <div key="1">• <strong>Inspire others:</strong> Document how your attitude motivated your group</div>,
+      <div key="2">• <strong>Skill mastery evidence:</strong> Show clear before/after improvement in specific sports skills</div>,
+      <div key="3">• <strong>Risk management expertise:</strong> Demonstrate teaching others about safety</div>
+    ],
+
+    // Relationships badges
+    'Relationships 1 Junior': [
+      <div key="1">• <strong>Deep research:</strong> Go beyond surface-level information about societies</div>,
+      <div key="2">• <strong>Multiple perspectives:</strong> Show you understand different viewpoints on social issues</div>,
+      <div key="3">• <strong>Clear communication:</strong> Present complex social ideas in accessible ways</div>
+    ],
+    'Relationships 1 Senior': [
+      <div key="1">• <strong>Expert analysis:</strong> Demonstrate sophisticated understanding of social trends and patterns</div>,
+      <div key="2">• <strong>Critical evaluation:</strong> Assess the reliability and bias of different information sources</div>,
+      <div key="3">• <strong>Complex connections:</strong> Link economic, political, and cultural influences together</div>
+    ],
+
+    // Integrity badges
+    'Integrity 1 Junior': [
+      <div key="1">• <strong>Difficult situations:</strong> Show honesty when it was challenging or uncomfortable</div>,
+      <div key="2">• <strong>Ownership of mistakes:</strong> Include examples where you took responsibility for errors</div>,
+      <div key="3">• <strong>Values in action:</strong> Connect your choices to your personal values clearly</div>
+    ],
+    'Integrity 1 Senior': [
+      <div key="1">• <strong>Moral courage:</strong> Demonstrate standing up for what's right even when it's hard</div>,
+      <div key="2">• <strong>Full accountability:</strong> Take responsibility not just for actions but their consequences</div>,
+      <div key="3">• <strong>Values advocacy:</strong> Show how you actively promote honesty and accountability</div>
+    ],
+
+    // Inspiration badges
+    'Inspiration 1 Junior': [
+      <div key="1">• <strong>Positive mindset:</strong> Show how you stayed optimistic during real challenges</div>,
+      <div key="2">• <strong>Growth evidence:</strong> Document specific learning breakthroughs and persistence</div>,
+      <div key="3">• <strong>Encouraging others:</strong> Include examples of motivating classmates or friends</div>
+    ],
+    'Inspiration 1 Senior': [
+      <div key="1">• <strong>Resilience mastery:</strong> Show systematic approaches to overcoming setbacks</div>,
+      <div key="2">• <strong>Strategic motivation:</strong> Demonstrate how you maintain motivation during long-term challenges</div>,
+      <div key="3">• <strong>Leadership inspiration:</strong> Prove how your attitude inspired group success</div>
+    ],
+
+    // Level 2 badges
+    'Excellence 2 Junior': [
+      <div key="1">• <strong>Research mastery:</strong> Use diverse, credible sources and explain your selection process</div>,
+      <div key="2">• <strong>Information synthesis:</strong> Combine ideas from different sources to create new understanding</div>,
+      <div key="3">• <strong>Cross-subject connections:</strong> Link learning from different classes or experiences</div>
+    ],
+    'Innovation 2 Senior': [
+      <div key="1">• <strong>Systematic problem-solving:</strong> Show your strategic approach to creative challenges</div>,
+      <div key="2">• <strong>Solution evaluation:</strong> Demonstrate how you test and improve creative solutions</div>,
+      <div key="3">• <strong>Creative leadership:</strong> Show how you guided others through problem-solving processes</div>
+    ]
+  };
+  
+  return tips[badgeName] || [<div key="default">• Focus on going beyond the minimum requirements in every piece of evidence</div>];
+};
+
+// Specific evidence types that lead to black badge success
+const getBlackBadgeEvidence = (badgeName: string) => {
+  const evidence: Record<string, JSX.Element[]> = {
+    'Excellence 1 Junior': [
+      <div key="1">📸 Before/after learning photos with reflection explanations</div>,
+      <div key="2">🔄 Process documentation showing how you adapted when stuck</div>,
+      <div key="3">🗣️ Witness statements from teachers about your curiosity in class</div>
+    ],
+    'Excellence 1 Senior': [
+      <div key="1">🎯 Strategic learning plans with evidence of adapting strategies</div>,
+      <div key="2">📊 Data showing your impact on others' learning outcomes</div>,
+      <div key="3">💡 Creative connections between subjects with specific examples</div>
+    ],
+    'Innovation 1 Junior': [
+      <div key="1">🛠️ Prototypes or iterations showing your creative problem-solving</div>,
+      <div key="2">📝 Process documentation of brainstorming and idea development</div>,
+      <div key="3">🎨 Visual evidence of unique approaches or creative solutions</div>
+    ],
+    'Hauora 1 Junior': [
+      <div key="1">📊 Fitness tracking data with clear improvement trends</div>,
+      <div key="2">🎥 Videos showing skill development over time</div>,
+      <div key="3">📋 Safety plans you created and implemented for activities</div>
+    ],
+    'Relationships 1 Junior': [
+      <div key="1">📚 Research from multiple sources with analysis and synthesis</div>,
+      <div key="2">🎤 Presentations showing complex social understanding</div>,
+      <div key="3">📰 Current events analysis connected to historical patterns</div>
+    ],
+    'Relationships 1 Senior': [
+      <div key="1">📊 Data analysis showing understanding of social/economic trends</div>,
+      <div key="2">🎯 Critical evaluation of different information sources and their bias</div>,
+      <div key="3">🌐 Cross-cultural comparison with sophisticated insights</div>
+    ],
+    'Integrity 1 Senior': [
+      <div key="1">⚖️ Documentation of moral courage in difficult situations</div>,
+      <div key="2">📝 Reflection on consequences of choices with full accountability</div>,
+      <div key="3">💬 Witness statements about your advocacy for honest practices</div>
+    ],
+    'Inspiration 1 Senior': [
+      <div key="1">📈 Evidence of systematic approaches to overcoming challenges</div>,
+      <div key="2">🎯 Long-term project completion with motivation tracking</div>,
+      <div key="3">👥 Group success stories where your leadership made the difference</div>
+    ],
+    'Excellence 2 Junior': [
+      <div key="1">🔍 Research portfolio with source evaluation and selection rationale</div>,
+      <div key="2">🧩 Synthesis projects combining multiple subjects or concepts</div>,
+      <div key="3">🔗 Connection maps showing links between different learning areas</div>
+    ],
+    'Innovation 2 Senior': [
+      <div key="1">🔬 Problem-solving process documentation with testing and iteration</div>,
+      <div key="2">📋 Creative solution evaluation with impact measurements</div>,
+      <div key="3">👥 Evidence of leading others through creative problem-solving</div>
+    ]
+  };
+  
+  return evidence[badgeName] || [
+    <div key="default1">📁 Multiple evidence types showing depth, not just completion</div>,
+    <div key="default2">💭 Deep reflections connecting experiences to personal growth</div>,
+    <div key="default3">🎯 Evidence that shows impact on others, not just yourself</div>
+  ];
+};
+
 export default function BadgeBuilder() {
   const [currentStep, setCurrentStep] = useState<Step>('landing');
   const [yearLevel, setYearLevel] = useState<YearLevel | null>(null);
@@ -352,10 +505,27 @@ export default function BadgeBuilder() {
 
           <Card className="mb-6">
             <CardHeader>
-              <CardTitle>What the badge panel is looking for:</CardTitle>
+              <CardTitle>Badge Criteria & Success Tips 🎯</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="text-sm text-muted-foreground whitespace-pre-line">{selectedBadge?.criteria}</div>
+            <CardContent className="space-y-4">
+              <div className="text-sm text-muted-foreground whitespace-pre-line bg-muted/50 p-4 rounded-lg">
+                <strong>Official Criteria:</strong><br />
+                {selectedBadge?.criteria}
+              </div>
+              
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 p-4 rounded-lg">
+                <h4 className="font-bold text-green-800 mb-2">💡 Pro Tips for Excellence:</h4>
+                <div className="text-sm text-green-700 space-y-2">
+                  {getBadgeTips(selectedBadge?.name || '')}
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 p-4 rounded-lg">
+                <h4 className="font-bold text-purple-800 mb-2">🏆 Evidence That Wins Black Badges:</h4>
+                <div className="text-sm text-purple-700 space-y-1">
+                  {getBlackBadgeEvidence(selectedBadge?.name || '')}
+                </div>
+              </div>
             </CardContent>
           </Card>
 
